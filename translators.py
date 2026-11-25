@@ -140,3 +140,36 @@ translations = {
         "Tiv": "M sugh u Za Van"
     }
 }
+
+def welcome_message():
+    print("\n" + "=" * 45)
+    print("       MULTILINGUAL TRANSLATION SYSTEM")
+    print("=" * 45)
+    print("Welcome! Translate English into Nigerian languages.")
+    print("Available languages: 5")
+    print("Available words and phrases: 20")
+    print("=" * 45)
+
+
+def select_language():
+
+    languages = ["Igbo", "Hausa", "Yoruba", "Idoma", "Tiv"]
+
+    while True:
+
+        print("\nSELECT YOUR LANGUAGE")
+
+        for number, language in enumerate(languages, start=1):
+            print(f"{number}. {language}")
+
+        choice = input("\nChoose a language (1-5): ").strip()
+
+        if choice in ["1", "2", "3", "4", "5"]:
+            selected_language = languages[int(choice) - 1]
+
+            print(f"\nYou selected: {selected_language}")
+
+            return selected_language
+
+        else:
+            print("Invalid selection! Please choose a number from 1 to 5.")
