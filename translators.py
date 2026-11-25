@@ -173,3 +173,29 @@ def select_language():
 
         else:
             print("Invalid selection! Please choose a number from 1 to 5.")
+def display_words():
+
+    print("\nAVAILABLE ENGLISH WORDS")
+
+    for number, word in enumerate(translations.keys(), start=1):
+        print(f"{number}. {word.title()}")
+
+
+def translate_word(language):
+
+    word = input("\nEnter an English word or phrase: ").strip().lower()
+
+    if word in translations:
+
+        result = translations[word][language]
+
+        print("\n" + "-" * 40)
+        print("TRANSLATION RESULT")
+        print("-" * 40)
+        print(f"English: {word.title()}")
+        print(f"{language}: {result}")
+        print("-" * 40)
+
+    else:
+        print("\nSorry! This word is not available.")
+        print("Please choose a word from the available list.")
