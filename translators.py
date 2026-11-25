@@ -199,3 +199,60 @@ def translate_word(language):
     else:
         print("\nSorry! This word is not available.")
         print("Please choose a word from the available list.")
+
+def translate_all(language):
+
+    print("\n" + "=" * 45)
+    print(f"       ALL TRANSLATIONS IN {language.upper()}")
+    print("=" * 45)
+
+    for number, (word, language_data) in enumerate(
+        translations.items(), start=1
+    ):
+        print(f"{number}. {word.title()} = {language_data[language]}")
+
+    print("=" * 45)
+
+
+def main_menu(language):
+
+    while True:
+
+        print("\n" + "=" * 45)
+        print("             MAIN MENU")
+        print("=" * 45)
+        print(f"Selected Language: {language}")
+        print("1. Translate a word")
+        print("2. View available English words")
+        print("3. Translate all 20 words")
+        print("4. Change language")
+        print("5. Exit")
+        print("=" * 45)
+
+        choice = input("Select an option (1-5): ").strip()
+
+        if choice == "1":
+
+            translate_word(language)
+
+        elif choice == "2":
+
+            display_words()
+
+        elif choice == "3":
+
+            translate_all(language)
+
+        elif choice == "4":
+
+            language = select_language()
+
+        elif choice == "5":
+
+            print("\nThank you for using our translation system!")
+            print("Goodbye!")
+            break
+
+        else:
+
+            print("\nInvalid option! Please select between 1 and 5.")
