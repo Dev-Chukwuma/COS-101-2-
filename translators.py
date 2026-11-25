@@ -249,6 +249,8 @@ def main_menu(language):
 
         elif choice == "5":
 
+
+            
             print("\nThank you for using our translation system!")
             print("Goodbye!")
             break
@@ -256,3 +258,18 @@ def main_menu(language):
         else:
 
             print("\nInvalid option! Please select between 1 and 5.")
+
+
+
+
+def main():
+
+    welcome_message()
+
+    language = select_language()
+
+    main_menu(language)
+
+
+if __name__ == "__main__":
+    main()            
